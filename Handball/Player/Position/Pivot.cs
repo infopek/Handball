@@ -1,6 +1,6 @@
 ﻿namespace Handball.Player.Position
 {
-    public class Shooter : IPlayer
+    public class Pivot : IPlayer
     {
         public string Name { get; set; }
         public int Age { get; set; }

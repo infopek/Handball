@@ -5,15 +5,13 @@ using System.Collections.Generic;
 namespace Handball.Collections.Generic
 {
     public delegate void TraverseHandler<T>(T data);
-    public class LinkedList<T> : IEnumerable<T>
+    public class LinkedList<T> : IEnumerable<T> where T : IComparable<T>
     {
         private Node<T> head;
-        private IComparer<T> comparer;
 
-        public LinkedList(IComparer<T> comparer)
+        public LinkedList()
         {
             this.head = null;
-            this.comparer = comparer;
         }
 
         public void Insert(T data)
@@ -34,7 +32,7 @@ namespace Handball.Collections.Generic
 
             // Iterate through the list until a "greater" element is found
             curr = head;
-            while (curr != null && comparer.Compare(curr.Data, data) < 0)
+            while (curr != null && curr.Data.CompareTo(data) < 0)
             {
                 prev = curr;
                 curr = curr.Next;

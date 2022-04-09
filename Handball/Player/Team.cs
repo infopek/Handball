@@ -12,7 +12,7 @@ namespace Handball.Player
         public Team(string name)
         {
             Name = name;
-            _players = new LinkedList<IPlayer>(new PlayerComparer());
+            _players = new LinkedList<IPlayer>();
         }
 
         public void SignPlayer(IPlayer player)

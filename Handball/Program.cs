@@ -6,7 +6,7 @@ namespace Handball
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Handball.Collections.Generic
 {
     public class Traverser<T> : IEnumerator<T>
+        where T : IComparable<T>
     {
         private Node<T> head;
         private Node<T> curr;
