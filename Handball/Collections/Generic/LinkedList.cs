@@ -22,14 +22,6 @@ namespace Handball.Collections.Generic
             Node<T> curr = head;
             Node<T> prev = null;
 
-            // Search for possible duplicate
-            while (curr != null)
-            {
-                if (data.Equals(curr.Data))                
-                    throw new DuplicateException();               
-                curr = curr.Next;
-            }
-
             // Iterate through the list until a "greater" element is found
             curr = head;
             while (curr != null && curr.Data.CompareTo(data) < 0)

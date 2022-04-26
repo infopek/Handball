@@ -8,6 +8,7 @@ namespace Handball.Player
 
         public string Name { get; set; }
         public int TeamSize { get; private set; } = 0;
+        public LinkedList<IPlayer> Players { get => _players; }
 
         public Team(string name)
         {
@@ -17,11 +18,13 @@ namespace Handball.Player
 
         public void SignPlayer(IPlayer player)
         {
+            player.Team = this;
             _players.Insert(player);
             TeamSize++;
         }
         public void RemovePlayer(IPlayer player)
         {
+            player.Team = null;
             _players.Delete(player);
             TeamSize--;
         }

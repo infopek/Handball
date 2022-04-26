@@ -10,5 +10,14 @@
         public Team Team { get; set; }
         public int Goals { get; set; } = 0;
 
+        public Substitute(string name, int age, int strength, int speed, int endurance)
+        {
+            Name = name;
+            Age = age;
+            Strength = strength;
+            Speed = speed;
+            Endurance = endurance;
+            Team = null;
+        }
     }
 }
