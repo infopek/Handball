@@ -9,6 +9,8 @@ namespace Handball.Player
         int Strength { get; set; }
         int Speed { get; set; }
         int Endurance { get; set; }
+        int Goals { get; set; }
+        bool IsBenched { get; set; }
         Team Team { get; set; }
 
         int IComparable<IPlayer>.CompareTo(IPlayer other)
