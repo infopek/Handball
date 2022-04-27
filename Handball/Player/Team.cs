@@ -4,7 +4,7 @@ namespace Handball.Player
 {
     public class Team
     {
-        private LinkedList<IPlayer> _players;
+        private readonly LinkedList<IPlayer> _players;
 
         public string Name { get; set; }
         public int TeamSize { get; private set; } = 0;

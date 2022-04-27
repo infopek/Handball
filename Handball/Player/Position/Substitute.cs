@@ -19,5 +19,20 @@
             Endurance = endurance;
             Team = null;
         }
+
+        public override bool Equals(object other)
+        {
+            return this.GetHashCode() == other.GetHashCode();
+        }
+        public override int GetHashCode()
+        {
+            int hash = 0;
+            hash += Name.GetHashCode() * 7;
+            hash += Age.GetHashCode() * 11;
+            hash += Strength.GetHashCode() * 13;
+            hash += Speed.GetHashCode() * 17;
+            hash += Endurance.GetHashCode() * 19;
+            return hash;
+        }
     }
 }
