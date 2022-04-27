@@ -42,8 +42,34 @@ namespace Handball
             t2.SignPlayer(new Center("Akile", 24, 56, 16, 210));
 
             Match match = new Match(t1, t2);
+            match.Goal += Match_Goal;
+            match.Save += Match_Save;
+            match.Injury += Match_Injury;
+            match.YellowCard += Match_YellowCard;
+            match.RedCard += Match_RedCard;
             match.Simulation();
             Console.WriteLine("Done!");
+        }
+
+        private static void Match_RedCard(IPlayer player)
+        {
+            Console.WriteLine($"{ player.Name } has been handed a red card!");
+        }
+        private static void Match_YellowCard(IPlayer player)
+        {
+            Console.WriteLine($"{ player.Name } has been handed a yellow card!");
+        }
+        private static void Match_Injury(IPlayer player)
+        {
+            Console.WriteLine($"{ player.Name } has been injured!");
+        }
+        private static void Match_Save(IPlayer player)
+        {
+            Console.WriteLine($"{ player.Name } has saved a shot!");
+        }
+        private static void Match_Goal(IPlayer player)
+        {
+            Console.WriteLine($"{ player.Name } has scored a goal!");
         }
     }
 }

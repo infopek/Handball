@@ -21,11 +21,11 @@ namespace Handball.Game
         private const int MAX_SIZE = 16;
         private const int FIELD_SIZE = 7;
 
-        private const float GOAL_PROB = 0.12f;
-        private const float SAVE_PROB = 0.2f;
-        private const float INJ_PROB = 0.03f;
-        private const float YC_PROB = 0.06f;
-        private const float RC_PROB = 0.01f;
+        private const float GOAL_PROB = 0.21f;
+        private const float SAVE_PROB = 0.19f;
+        private const float INJ_PROB = 0.1f;
+        private const float YC_PROB = 0.09f;
+        private const float RC_PROB = 0.04f;
 
         private IPlayer[] benchA;
         private IPlayer[] benchB;
@@ -44,6 +44,9 @@ namespace Handball.Game
             else throw new TeamAlreadyExistsException();
         }
 
+        /// <summary>
+        /// Simulates a whole handball match between two teams, match duration is 60 seconds.
+        /// </summary>
         public void Simulation()
         {
             Start();
@@ -94,7 +97,7 @@ namespace Handball.Game
                     RedCard?.Invoke(player);
                 }
 
-                System.Threading.Thread.Sleep(10);    // wait 1 second
+                System.Threading.Thread.Sleep(1000);    // wait 1 second
             }
         }
         /// <summary>
@@ -248,18 +251,6 @@ namespace Handball.Game
                 i++;
             }
         }
-        ///// <summary>
-        ///// Determines the 'availability' of the <paramref name="curr"/> player, duplicate-wise.
-        ///// </summary>
-        //private bool Fk(int level, IPlayer curr, IPlayer[] E)
-        //{
-        //    for (int i = 0; i < level; i++)
-        //    {
-        //        if (E[i].Equals(curr))
-        //            return false;
-        //    }
-        //    return true;
-        //}
         /// <summary>
         /// Calculates the fitness of a given <paramref name="lineup"/> from 3 skills: strength, speed and endurance.
         /// </summary>
