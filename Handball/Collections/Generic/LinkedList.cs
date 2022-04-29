@@ -14,7 +14,7 @@ namespace Handball.Collections.Generic
             this._head = null;
         }
 
-        public T Get_Head() => _head.Data;
+        public T GetHead() => _head.Data;
         public void Insert(T data)
         {
             Node<T> newNode = new Node<T>();
